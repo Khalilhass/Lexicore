@@ -19,16 +19,16 @@ javac -version
 
 ## 2. How to Compile
 
-From the folder containing this README (the one with the `lexicore/` folder inside it):
+From the folder containing this README (the one with the `Lexicore/` folder inside it):
 
 ```
 mkdir out
-javac -d out $(find lexicore -name "*.java")
+javac -d out $(find Lexicore -name "*.java")
 ```
 
 On Windows (PowerShell), replace the second line with:
 ```
-javac -d out (Get-ChildItem -Recurse -Filter *.java lexicore | ForEach-Object { $_.FullName })
+javac -d out (Get-ChildItem -Recurse -Filter *.java Lexicore | ForEach-Object { $_.FullName })
 ```
 
 A clean compile produces no output at all. If you see errors, double-check your JDK version (`javac -version` should say 11 or higher).
