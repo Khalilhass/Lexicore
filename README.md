@@ -196,11 +196,3 @@ com/lexicore/
  └── util/Constants.java                 — sentinel string, caps, defaults
 ```
 
----
-
-## 8. Known, Deliberate Limitations (worth mentioning in the demo, not hiding)
-
-- Input (typed or file) is capped at 50,000 lines — beyond that, the rest is not read at all, and a warning is shown. This is an intentional mobile-memory guard, not a bug.
-- Undo/redo history is capped at 10 states for the same reason.
-- Sentiment negation only looks back 2 words, and never crosses a sentence boundary — a deliberate scope decision, not full linguistic negation handling.
-- Autocomplete/next-word-prediction are fully rebuilt (not incrementally patched) after every edit — simpler and safer than incremental patching, at the cost of doing a bit more work per edit. The search index, by contrast, *is* patched incrementally — that asymmetry is intentional and explained in the report.
